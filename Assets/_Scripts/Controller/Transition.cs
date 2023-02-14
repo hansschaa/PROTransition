@@ -20,6 +20,7 @@ namespace PROTransition
         }
 
         public virtual void Play(Image source) { }
+        public virtual void Restart(Action? action= null) { }
     }
 }
 

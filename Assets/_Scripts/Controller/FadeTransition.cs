@@ -20,11 +20,18 @@ namespace PROTransition
             _source.color = color;
 
             //Reset position
+            _source.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
             _source.transform.eulerAngles = Vector3.zero;
             _source.transform.localScale = Vector3.one;
 
             //Run Anim
             FadeIn(_action);
+        }
+
+        public override void Restart(Action? action= null)
+        {
+            action?.Invoke();
+            FadeOut();
         }
 
         public void FadeIn(Action? action)
@@ -37,12 +44,11 @@ namespace PROTransition
                 }).Play();
         }
 
-        public void FadeOut(Action? action = null)
+        public void FadeOut()
         {
-            action?.Invoke();
             _source.DOFade(0, _transitionInfo._totalTime / 2).OnComplete(()=> {
-                action?.Invoke();
                 _source.gameObject.SetActive(false);
+                TransitionScreenManager.Instance.SetCurrentTransition(null);
             }).Play();
         }
     }

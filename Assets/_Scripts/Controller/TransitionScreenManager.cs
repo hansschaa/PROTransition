@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,6 +25,10 @@ namespace PROTransition
                 Debug.LogError("Curret Transition is empty");
 
             _currentTransition.Play(_transitionSquare);
+        }
+
+        public void Restart(Action? restartAction = null) {
+            _currentTransition.Restart(restartAction);
         }
 
         public void SetCurrentTransition(Transition newTransition)

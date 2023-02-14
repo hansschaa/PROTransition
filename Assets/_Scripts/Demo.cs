@@ -9,7 +9,12 @@ public class Demo : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A)) {
             TransitionScreenManager.Instance.Play(new FadeTransition
                 (new TransitionInfo(Color.white, 2, DG.Tweening.Ease.Linear, TransitionType.Fade, TransitionOrigin.Center)
-                , 1, true, () => print("Terminó el fade in")));
+                , 1, true, () => print("End Fade In")));
+        }
+
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            
         }
     }
 }
