@@ -23,29 +23,27 @@ namespace PROTransition
             _source.transform.eulerAngles = Vector3.zero;
             _source.transform.localScale = Vector3.one;
 
-            FadeIn();
+            //Run Anim
+            FadeIn(_action);
         }
 
-        public void FadeIn()
+        public void FadeIn(Action? action)
         {
             _source.gameObject.SetActive(true);
-
             _source.DOFade(1, _transitionInfo._totalTime / 2).SetEase(_transitionInfo._ease)
-                .OnComplete(OnCompleteFadeIn)
-                .Play();
-        }
-
-        private void OnCompleteFadeIn()
-        {
-            _action?.Invoke();
-
-            TransitionScreenManager.Instance.LoadSceneAsync(_sceneId);
+                .OnComplete(()=> {
+                    _action?.Invoke();
+                    TransitionScreenManager.Instance.LoadSceneAsync(_sceneId);
+                }).Play();
         }
 
         public void FadeOut(Action? action = null)
         {
             action?.Invoke();
-            _source.DOFade(0, _transitionInfo._totalTime / 2).Play();
+            _source.DOFade(0, _transitionInfo._totalTime / 2).OnComplete(()=> {
+                action?.Invoke();
+                _source.gameObject.SetActive(false);
+            }).Play();
         }
     }
 }
