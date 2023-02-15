@@ -1,6 +1,6 @@
 # PROTransition
 
-This Unity project is designed to make transitioning between screens easier by using fade animations. It uses C# scripts to handle asynchronous scene loading and activation of fade animations.
+This Unity project is designed to make transitioning between screens easier by using some animations. It uses C# scripts to handle asynchronous scene loading and activation of fade animations.
 
 ## Installation
 To use this project, you will need to have Unity 2019 or later installed. You will also need to have Git installed on your computer.
