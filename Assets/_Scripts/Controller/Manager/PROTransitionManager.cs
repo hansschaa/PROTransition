@@ -1,33 +1,50 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace PROTransition
 {
-    public partial class TransitionScreenManager : UnitySingletonPersistent<TransitionScreenManager>
+    public partial class PROTransitionManager : UnitySingletonPersistent<PROTransitionManager>
     {
-        public Image _transitionSquare;
-        public Image _transitionCircle;
+        [Header("Fade")]
+        public GameObject _transitionSquare;
+        
+        [Header("Mask")]
+        public GameObject _mask; 
+        public GameObject _maskBackground;
+
+        [Header("Others")]
         public Transition _currentTransition;
 
         public void Play(Transition transition)
         {
             _currentTransition = transition;
+            List<GameObject> sources = new List<GameObject>();
 
-            _currentTransition.Play(_transitionSquare);
-        }
+            //Set sources per transition type: sources are usefull for play the transition anim above them
+            switch (transition._transitionInfo._type) {
 
-        public void Play()
-        {
-            if (_currentTransition == null)
-                Debug.LogError("Curret Transition is empty");
+                case TransitionType.Fade:
+                    sources.Add(_transitionSquare);
+                    break;
+                case TransitionType.Mask:
+                    sources.Add(_mask);
+                    sources.Add(_maskBackground);
+                    break;
+            }
 
-            _currentTransition.Play(_transitionSquare);
+            _currentTransition.Play(sources);
         }
 
         public void Restart(Action? restartAction = null) {
+
+            if (_currentTransition == null) {
+                Debug.LogWarning("Doesnt have _currentTransition");
+                return;
+            }
+
             _currentTransition.Restart(restartAction);
         }
 

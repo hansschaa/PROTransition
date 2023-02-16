@@ -2,6 +2,6 @@
 {
     public enum TransitionType
     {
-        Fade, Move
+        Fade, Mask
     }
 }

@@ -1,5 +1,6 @@
 using System;
-using UnityEngine.UI;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace PROTransition
 {
@@ -8,7 +9,6 @@ namespace PROTransition
         public TransitionInfo _transitionInfo;
         protected int _sceneId;
         public Action _action;
-        public Image _source;
         public bool _async;
    
         public Transition(TransitionInfo transitionInfo, int sceneId, bool async, Action? action = null)
@@ -19,7 +19,11 @@ namespace PROTransition
             _action = action;
         }
 
-        public virtual void Play(Image source) { }
+        //Play the animaction, sources contains all gameobjects neccesary for the proccess
+        public virtual void Play(List<GameObject> sources) {
+        }
+
+        //Restart the animation, you need this for restore the animation status. You must need this when change scenes
         public virtual void Restart(Action? action= null) { }
     }
 }
