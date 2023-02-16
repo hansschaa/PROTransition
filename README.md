@@ -24,12 +24,10 @@ This project is used to create a smooth transition between screens using fade an
 
 ## Current Transitions
 - Fade
-
-![fade](https://user-images.githubusercontent.com/13873346/219246119-aa337f29-975b-4eec-abc4-c821c3e8334f.gif)
+<img src="https://user-images.githubusercontent.com/13873346/219246119-aa337f29-975b-4eec-abc4-c821c3e8334f.gif" width="50%" height="50%"/>
 
 - Mask (Like Mario 64)
-
-![mask](https://user-images.githubusercontent.com/13873346/219246691-bbe7537d-f78e-417f-a396-e94b7de904fe.gif)
+<img src="https://user-images.githubusercontent.com/13873346/219246691-bbe7537d-f78e-417f-a396-e94b7de904fe.gif" width="50%" height="50%"/>
 
 - Square Horizontal Traslation (WIP)
 
