@@ -30,7 +30,7 @@ This project is used to create a smooth transition between screens using fade an
 <img src="https://user-images.githubusercontent.com/13873346/219246691-bbe7537d-f78e-417f-a396-e94b7de904fe.gif" width="50%" height="50%"/>
 
 - Filled Image Horizonta/Vertical
-![filed](https://user-images.githubusercontent.com/13873346/220031536-21676f58-9d32-48f5-b8a2-5cb9c19ba5e5.gif)
+<img src="https://user-images.githubusercontent.com/13873346/220031536-21676f58-9d32-48f5-b8a2-5cb9c19ba5e5.gif" width="50%" height="50%"/>
 
 - Others (WIP)
 
