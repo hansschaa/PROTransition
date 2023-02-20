@@ -29,7 +29,10 @@ This project is used to create a smooth transition between screens using fade an
 - Mask (Like Mario 64)
 <img src="https://user-images.githubusercontent.com/13873346/219246691-bbe7537d-f78e-417f-a396-e94b7de904fe.gif" width="50%" height="50%"/>
 
-- Square Horizontal Traslation (WIP)
+- Filled Image Horizonta/Vertical
+![filed](https://user-images.githubusercontent.com/13873346/220031536-21676f58-9d32-48f5-b8a2-5cb9c19ba5e5.gif)
+
+- Others (WIP)
 
 ## Contributions
 If you want to contribute to this project, feel free to send a pull request. Make sure to include a detailed description of the changes you have made and ensure your code adheres to Unity's style guidelines.
