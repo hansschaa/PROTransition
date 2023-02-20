@@ -292,6 +292,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 348262197756398283, guid: 2525d989aa99b6445bb57ff8ad710df6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5539764274406117225, guid: 2525d989aa99b6445bb57ff8ad710df6, type: 3}
+      propertyPath: m_FillAmount
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6103474945610087891, guid: 2525d989aa99b6445bb57ff8ad710df6, type: 3}
       propertyPath: m_Camera
       value: 
@@ -343,6 +351,26 @@ PrefabInstance:
     - target: {fileID: 6103474946710841102, guid: 2525d989aa99b6445bb57ff8ad710df6, type: 3}
       propertyPath: m_Name
       value: Transition Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225158584182762030, guid: 2525d989aa99b6445bb57ff8ad710df6, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225158584182762030, guid: 2525d989aa99b6445bb57ff8ad710df6, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225158584182762030, guid: 2525d989aa99b6445bb57ff8ad710df6, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225158584182762030, guid: 2525d989aa99b6445bb57ff8ad710df6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6225158584182762030, guid: 2525d989aa99b6445bb57ff8ad710df6, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2525d989aa99b6445bb57ff8ad710df6, type: 3}

@@ -10,7 +10,10 @@ namespace PROTransition
     {
         [Header("Fade")]
         public GameObject _transitionSquare;
-        
+
+        [Header("Horizontal")]
+        public GameObject _horizontalSquare;
+
         [Header("Mask")]
         public GameObject _mask; 
         public GameObject _maskBackground;
@@ -28,6 +31,9 @@ namespace PROTransition
 
                 case TransitionType.Fade:
                     sources.Add(_transitionSquare);
+                    break;
+                case TransitionType.Filled:
+                    sources.Add(_horizontalSquare);
                     break;
                 case TransitionType.Mask:
                     sources.Add(_mask);

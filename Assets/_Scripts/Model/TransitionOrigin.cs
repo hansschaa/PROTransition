@@ -2,6 +2,6 @@
 {
     public enum TransitionOrigin
     {
-        Center, Left, Right, Up, Down
+        Left, Right, Up, Down
     }
 }
