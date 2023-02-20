@@ -59,25 +59,17 @@ namespace PROTransition
             _currentTransition = newTransition;
         }
 
-        protected IEnumerator LoadSceneAsyncCoroutine(int sceneID)
+        protected IEnumerator LoadSceneAsyncCoroutine(int sceneID, AsyncOperation asyncOperation)
         {
-            AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneID);
             asyncOperation.allowSceneActivation = false;
 
             while (!asyncOperation.isDone)
-            {
-                if (asyncOperation.progress >= 0.9f)
-                {
-                    asyncOperation.allowSceneActivation = true;
-                }
-
                 yield return null;
-            }
         }
 
-        internal void LoadSceneAsync(int sceneID)
+        internal void LoadSceneAsync(int sceneID,AsyncOperation asyncOperation)
         {
-            StartCoroutine(LoadSceneAsyncCoroutine(sceneID));
+            StartCoroutine(LoadSceneAsyncCoroutine(sceneID, asyncOperation));
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 namespace PROTransition { 
     public class SquareFilledTransition : Transition
@@ -51,8 +52,10 @@ namespace PROTransition {
             })
             .SetEase(_transitionInfo._ease)
             .OnComplete(() => {
+                AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(_sceneId);
+                PROTransitionManager.Instance.LoadSceneAsync(_sceneId, asyncOperation);
                 _action?.Invoke();
-                PROTransitionManager.Instance.LoadSceneAsync(_sceneId);
+                asyncOperation.allowSceneActivation = true;
             })
             .Play();
         }

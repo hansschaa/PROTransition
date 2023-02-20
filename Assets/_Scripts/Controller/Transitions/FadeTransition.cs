@@ -2,6 +2,7 @@ using DG.Tweening;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace PROTransition
@@ -45,8 +46,10 @@ namespace PROTransition
             _fadeImage.gameObject.SetActive(true);
             _fadeImage.DOFade(1, _transitionInfo._totalTime / 2).SetEase(_transitionInfo._ease)
                 .OnComplete(()=> {
+                    AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(_sceneId);
+                    PROTransitionManager.Instance.LoadSceneAsync(_sceneId, asyncOperation);
                     _action?.Invoke();
-                    PROTransitionManager.Instance.LoadSceneAsync(_sceneId);
+                    asyncOperation.allowSceneActivation = true;
                 }).Play();
         }
     }

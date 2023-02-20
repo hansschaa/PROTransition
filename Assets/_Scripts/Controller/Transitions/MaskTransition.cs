@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using DG.Tweening;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 namespace PROTransition{
 
@@ -32,8 +33,10 @@ namespace PROTransition{
             _spriteMaskBackground.gameObject.SetActive(true);
 
             _spriteMask.transform.DOScale(Vector3.zero, _transitionInfo._totalTime / 2).SetEase(_transitionInfo._ease).OnComplete(() => {
+                AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(_sceneId);
+                PROTransitionManager.Instance.LoadSceneAsync(_sceneId, asyncOperation);
                 _action?.Invoke();
-                PROTransitionManager.Instance.LoadSceneAsync(_sceneId);
+                asyncOperation.allowSceneActivation = true;
             }).Play();
         }
 
